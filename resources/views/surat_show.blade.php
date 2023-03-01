@@ -15,6 +15,10 @@
         #ayat .ayat-item:nth-child(odd) {
             background-color: rgba(0, 0, 0, .1);
         }
+
+        .arabic-text {
+            font-family: Calibri, Arial, Helvetica, sans-serif;
+        }
     </style>
 @endsection
 
@@ -37,8 +41,8 @@
         </div>
 
         {{-- Bismillah --}}
-        <div class="row py-3 text-center">
-            <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
+        <div class="row py-3 text-center arabic-text">
+            <h2>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
         </div>
 
         {{-- Ayat --}}
@@ -53,9 +57,9 @@
                         </div>
                     </div>
                     <div class="col">
-                        <h5 class="text-end mb-3">
+                        <h3 class="text-end mb-3 arabic-text">
                             {{ $ayat->teksArab }}
-                        </h5>
+                        </h3>
                         <p>
                             {{ $ayat->teksLatin }}
                         </p>
