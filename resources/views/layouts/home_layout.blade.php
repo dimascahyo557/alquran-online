@@ -26,15 +26,15 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand m-auto" href="{{ url('/') }}">Al-Quranku</a>
+            <a class="navbar-brand m-auto" href="{{ route('home') }}">Al-Quranku</a>
         </div>
     </nav>
     <nav class="navbar navbar-expand bg-body-tertiary position-sticky top-0">
         <div class="container-fluid">
             <div class="navbar-nav m-auto">
-                <a class="nav-link" href="{{ url('/') }}">Beranda</a>
-                <a class="nav-link" href="#">Baca per juz</a>
-                <a class="nav-link" href="#">Baca per surah</a>
+                <a class="nav-link" href="{{ route('home') }}">Beranda</a>
+                <a class="nav-link" href="#">Baca Al-Quran</a>
+                <a class="nav-link" href="#">Tentang Aplikasi</a>
             </div>
         </div>
     </nav>
