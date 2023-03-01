@@ -31,11 +31,11 @@
             <a class="navbar-brand m-auto" href="{{ route('home') }}">Al-Quranku</a>
         </div>
     </nav>
-    <nav class="navbar navbar-expand bg-body-tertiary position-sticky top-0">
+    <nav class="navbar navbar-expand bg-body-tertiary position-sticky top-0 shadow-sm">
         <div class="container-fluid">
             <div class="navbar-nav m-auto">
                 <a class="nav-link" href="{{ route('home') }}">Beranda</a>
-                <a class="nav-link" href="#">Baca Al-Quran</a>
+                <a class="nav-link" href="{{ route('surat.list') }}">Baca Al-Quran</a>
                 <a class="nav-link" href="#">Tentang Aplikasi</a>
             </div>
         </div>

@@ -19,8 +19,8 @@
 
 @section('content')
     <div class="container-fluid">
-        @foreach ($data->data as $surat)
-            <a href="" class="btn btn-surat border mb-2 w-100">
+        @foreach ($data as $surat)
+            <a href="{{ route('surat.show', $surat->nomor) }}" class="btn btn-surat border mb-2 w-100">
                 <div class="row py-2 align-items-center">
                     <div class="col-auto">
                         <div class="rounded-circle d-flex justify-content-center align-items-center surat-number">

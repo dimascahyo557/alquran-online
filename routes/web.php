@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/surat', [AlQuranController::class, 'suratList'])->name('surat');
+Route::get('/surat', [AlQuranController::class, 'suratList'])->name('surat.list');
+Route::get('/surat/{nomor}', [AlQuranController::class, 'suratShow'])->name('surat.show');

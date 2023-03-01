@@ -17,8 +17,22 @@ class AlQuranController extends Controller
             return redirect()->route('home')->with('message', 'Gagal mengambil data surat');
         }
 
-        $data = $response->object();
+        $data = $response->object()->data;
 
         return view('surat', compact('data'));
+    }
+
+    public function suratShow($nomor)
+    {
+        $url = config('app.api_url') . "/surat/$nomor";
+        $response = Http::get($url);
+
+        if ($response->status() != Response::HTTP_OK) {
+            return redirect()->route('home')->with('message', 'Gagal mengambil data surat');
+        }
+
+        $data = $response->object()->data;
+
+        return view('surat_show', compact('data'));
     }
 }
