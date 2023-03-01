@@ -20,6 +20,8 @@
             justify-self: flex-end;
         }
     </style>
+
+    @yield('style')
 </head>
 
 <body>
@@ -39,8 +41,8 @@
         </div>
     </nav>
     
-    <main class="m-auto" style="max-width: 600px;">
-        <div class="container my-3">
+    <main class="m-auto" style="max-width: 600px; width: 100%;">
+        <div class="container w-100 my-3">
             @yield('content')
         </div>
     </main>
