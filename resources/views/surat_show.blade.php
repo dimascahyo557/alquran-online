@@ -41,9 +41,12 @@
         </div>
 
         {{-- Bismillah --}}
-        <div class="row py-3 text-center arabic-text">
-            <h2>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-        </div>
+        {{-- Skip if surat is al-fatihah and at-taubah --}}
+        @if (!in_array($data->nomor, [1, 9]))
+            <div class="row py-3 text-center arabic-text">
+                <h2>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+            </div>
+        @endif
 
         {{-- Ayat --}}
         <div id="ayat">
