@@ -20,10 +20,6 @@
 
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-
             background-image: url('{{ asset("image/alquran.png") }}');
             background-size: contain;
             background-position: center;
@@ -53,7 +49,7 @@
             </div>
             <div class="phone-content">
 
-                <div class="overflow-auto h-100">
+                <div class="overflow-auto h-100 d-flex flex-column">
                     {{-- App Title --}}
                     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
                         <div class="container-fluid">

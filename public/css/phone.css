@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 .phone-bottom-navigation {
     bottom: 0;
     z-index: 1;
@@ -7,9 +14,22 @@
 
 .phone {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-content {
+    flex-grow: 1;
+    overflow: auto;
 }
 
 @media (max-width: 499px) {
+    .phone-container {
+        align-self: stretch;
+    }
+    .phone {
+        height: 100%;
+    }
     .phone-header {
         display: none;
     }
@@ -18,11 +38,13 @@
         bottom: 0;
         width: 100%;
     }
+    .phone-content {
+        margin-bottom: 70px;
+    }
 }
 
 @media (min-width: 500px) {
     .phone-container {
-        margin: auto;
         max-width: 400px;
         width: 100%;
     }
@@ -32,8 +54,6 @@
         height: 94vh;
         border-radius: 40px;
         box-shadow: 0 5px 35px rgba(139, 139, 139, .9);
-        display: flex;
-        flex-direction: column;
         overflow: hidden;
     }
     .phone-header {
@@ -50,10 +70,6 @@
         border: 6px double white;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, .6);
-    }
-    .phone-content {
-        flex-grow: 1;
-        overflow: auto;
     }
     .phone-swipe {
         margin: 10px auto;
