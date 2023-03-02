@@ -10,6 +10,8 @@
     
     <link rel="shortcut icon" href="{{ asset('image/alquran.png') }}" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
     <style>
         body {
             display: flex;

@@ -87,12 +87,70 @@
                     @if ($data->suratSebelumnya)
                         <a href="{{ route('surat.show', $data->suratSebelumnya->nomor) }}" class="btn btn-secondary"><< {{ $data->suratSebelumnya->namaLatin }}</a>
                     @endif
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#audioModal">
+                            <i class="fa-solid fa-headphones"></i>
+                        </button>
                     @if ($data->suratSelanjutnya)
                         <a href="{{ route('surat.show', $data->suratSelanjutnya->nomor) }}" class="btn btn-secondary">{{ $data->suratSelanjutnya->namaLatin }} >></a>
                     @endif
                 </div>
             </div>
         </nav>
+
+        {{-- Audio Modal --}}
+        <div class="modal fade" id="audioModal" tabindex="-1" aria-labelledby="audioModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="audioModalLabel">Audio</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <h5>Abdullah Al Juhany</h3>
+                                <audio controls>
+                                    <source src="{{ $data->audioFull->{'01'} }}">
+                                </audio>
+                            </div>
+    
+                            <div class="mb-3">
+                                <h5>Abdul Muhsin Al Qasim</h3>
+                                <audio controls>
+                                    <source src="{{ $data->audioFull->{'02'} }}">
+                                </audio>
+                            </div>
+    
+                            <div class="mb-3">
+                                <h5>Abdurrahman as Sudais</h3>
+                                <audio controls>
+                                    <source src="{{ $data->audioFull->{'03'} }}">
+                                </audio>
+                            </div>
+    
+                            <div class="mb-3">
+                                <h5>Ibrahim Al Dossari</h3>
+                                <audio controls>
+                                    <source src="{{ $data->audioFull->{'04'} }}">
+                                </audio>
+                            </div>
+    
+                            <div class="mb-3">
+                                <h5>Misyari Rasyid Al Afasi</h3>
+                                <audio controls>
+                                    <source src="{{ $data->audioFull->{'05'} }}">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
