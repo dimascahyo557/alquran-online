@@ -49,27 +49,21 @@
             <div class="phone-content">
 
                 <div class="overflow-auto h-100">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    {{-- App Title --}}
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
                         <div class="container-fluid">
                             <a class="navbar-brand m-auto" href="{{ route('home') }}">Al-Quranku</a>
                         </div>
                     </nav>
-                    <nav class="navbar navbar-expand bg-body-tertiary position-sticky top-0 shadow-sm">
-                        <div class="container-fluid">
-                            <div class="navbar-nav m-auto">
-                                <a class="nav-link" href="{{ route('home') }}">Beranda</a>
-                                <a class="nav-link" href="{{ route('surat.list') }}">Baca Al-Quran</a>
-                                <a class="nav-link" href="{{ route('about-app') }}">Tentang Aplikasi</a>
-                            </div>
-                        </div>
-                    </nav>
                     
+                    {{-- Main Content --}}
                     <main class="m-auto" style="max-width: 600px; width: 100%;">
                         <div class="container w-100 my-3">
                             @yield('content')
                         </div>
                     </main>
                 
+                    {{-- Content Footer --}}
                     <footer class="navbar navbar-expand-lg bg-body-tertiary" id="footer">
                         <div class="container-fluid">
                             <div class="mx-auto my-3 text-center">
@@ -84,6 +78,24 @@
                     </footer>
                 </div>
                 
+            </div>
+            {{-- Bottom navigation bar --}}
+            <div class="phone-bottom-navigation">
+                <nav class="navbar navbar-expand bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="navbar-nav w-100 justify-content-around h1">
+                            <a class="nav-link" href="{{ route('home') }}">
+                                <i class="fa-solid fa-home"></i>
+                            </a>
+                            <a class="nav-link" href="{{ route('surat.list') }}">
+                                <i class="fa-solid fa-book-quran"></i>
+                            </a>
+                            <a class="nav-link" href="{{ route('about-app') }}">
+                                <i class="fa-solid fa-info-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
             </div>
             <div class="phone-swipe"></div>
         </div>
