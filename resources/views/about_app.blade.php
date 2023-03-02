@@ -19,7 +19,7 @@
         </div>
         <div class="mb-3">
             <h6 class="mb-0">Pencipta</h6>
-            <p>Dimas Cahyo Nugroho</p>
+            <p>Hamba Allah</p>
         </div>
     </div>
 @endsection
