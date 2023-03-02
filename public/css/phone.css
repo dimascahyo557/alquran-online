@@ -1,10 +1,10 @@
-@media (max-width: 399px) {
+@media (max-width: 499px) {
     .phone-header {
         display: none;
     }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 500px) {
     .phone-container {
         margin: auto;
         max-width: 400px;
