@@ -6,7 +6,10 @@
     <div class="d-grid">
         <img class="m-auto" src="{{ asset('image/alquran.png') }}" alt="gambar alquran" style="width: 50%;">
         <a href="{{ route('surat.list') }}" class="btn btn-outline-secondary border-2 mb-3">Baca Al-Quran</a>
-        <a href="#" class="btn btn-outline-secondary border-2 mb-3">Terakhir Baca</a>
+        <a
+            href="{{ $lastReadUrl }}"
+            class="btn btn-outline-secondary border-2 mb-3"
+        >Terakhir Baca</a>
         <a href="#" class="btn btn-outline-secondary border-2 mb-3">Tentang Aplikasi</a>
     </div>
 @endsection

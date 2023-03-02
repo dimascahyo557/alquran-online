@@ -16,6 +16,10 @@
             background-color: rgba(0, 0, 0, .1);
         }
 
+        .ayat-item {
+            scroll-margin-top: 60px;
+        }
+
         .arabic-text {
             font-family: Calibri, Arial, Helvetica, sans-serif;
         }
@@ -51,26 +55,28 @@
         {{-- Ayat --}}
         <div id="ayat">
             @foreach ($data->ayat as $ayat)
-                <div class="row py-3 ayat-item">
-                    <div class="col-auto">
-                        <div class="rounded-circle d-flex justify-content-center align-items-center surat-number">
-                            <b>
-                                {{ $ayat->nomorAyat }}
-                            </b>
+                <button class="btn w-100 ayat-item rounded-0" onclick="setLastRead({{ $ayat->nomorAyat }})" id="ayat-{{ $ayat->nomorAyat }}">
+                    <div class="row py-3">
+                        <div class="col-auto">
+                            <div class="rounded-circle d-flex justify-content-center align-items-center surat-number">
+                                <b>
+                                    {{ $ayat->nomorAyat }}
+                                </b>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h3 class="text-end mb-3 arabic-text">
+                                {{ $ayat->teksArab }}
+                            </h3>
+                            <p class="text-start">
+                                {{ $ayat->teksLatin }}
+                            </p>
+                            <p class="text-muted text-start">
+                                {{ $ayat->teksIndonesia }}
+                            </p>
                         </div>
                     </div>
-                    <div class="col">
-                        <h3 class="text-end mb-3 arabic-text">
-                            {{ $ayat->teksArab }}
-                        </h3>
-                        <p>
-                            {{ $ayat->teksLatin }}
-                        </p>
-                        <p class="text-muted">
-                            {{ $ayat->teksIndonesia }}
-                        </p>
-                    </div>
-                </div>
+                </button>
             @endforeach
         </div>
 
@@ -92,4 +98,20 @@
 
 @section('credit')
     <a href="https://www.freepik.com/free-vector/empty-blank-labels-circular-stamps-set-six_13732377.htm#query=circle%20border&position=3&from_view=search&track=ais">Image by starline</a> on Freepik
+@endsection
+
+@section('script')
+    <script>
+        function setLastRead(ayat) {
+            const confirmed = confirm(`Atur ayat ${ayat} sebagai terakhir baca?`)
+            if (confirmed) {
+                let date = new Date()
+                date.setTime(date.getTime() + 365*24*60*60*1000)
+                const expires = date.toUTCString()
+
+                document.cookie = `last_surat={{ $data->nomor }}; expires=${expires}; path=/`
+                document.cookie = `last_ayat=${ayat}; expires=${expires}; path=/`
+            }
+        }
+    </script>
 @endsection
