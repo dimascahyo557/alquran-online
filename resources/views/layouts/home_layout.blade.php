@@ -36,7 +36,7 @@
             <div class="navbar-nav m-auto">
                 <a class="nav-link" href="{{ route('home') }}">Beranda</a>
                 <a class="nav-link" href="{{ route('surat.list') }}">Baca Al-Quran</a>
-                <a class="nav-link" href="#">Tentang Aplikasi</a>
+                <a class="nav-link" href="{{ route('about-app') }}">Tentang Aplikasi</a>
             </div>
         </div>
     </nav>

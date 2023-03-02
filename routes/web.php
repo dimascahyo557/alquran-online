@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutAppController;
 use App\Http\Controllers\AlQuranController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/surat', [AlQuranController::class, 'suratList'])->name('surat.list');
 Route::get('/surat/{nomor}', [AlQuranController::class, 'suratShow'])->name('surat.show');
+Route::get('/about-app', [AboutAppController::class, 'aboutApp'])->name('about-app');
