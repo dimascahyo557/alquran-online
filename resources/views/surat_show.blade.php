@@ -16,10 +16,6 @@
             background-color: rgba(0, 0, 0, .1);
         }
 
-        .ayat-item {
-            scroll-margin-top: 60px;
-        }
-
         .arabic-text {
             font-family: Calibri, Arial, Helvetica, sans-serif;
         }

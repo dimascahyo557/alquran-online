@@ -23,6 +23,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+
+            background-image: url('{{ asset("image/alquran.png") }}');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         #footer {
             justify-self: flex-end;
@@ -81,17 +86,20 @@
             </div>
             {{-- Bottom navigation bar --}}
             <div class="phone-bottom-navigation">
-                <nav class="navbar navbar-expand bg-body-tertiary">
+                <nav class="navbar navbar-expand py-1">
                     <div class="container-fluid">
-                        <div class="navbar-nav w-100 justify-content-around h1">
-                            <a class="nav-link" href="{{ route('home') }}">
-                                <i class="fa-solid fa-home"></i>
+                        <div class="navbar-nav w-100 justify-content-around">
+                            <a class="nav-link text-center" href="{{ route('home') }}">
+                                <i class="fa-solid fa-home fa-xl"></i>
+                                <small class="d-block">Beranda</small>
                             </a>
-                            <a class="nav-link" href="{{ route('surat.list') }}">
-                                <i class="fa-solid fa-book-quran"></i>
+                            <a class="nav-link text-center" href="{{ route('surat.list') }}">
+                                <i class="fa-solid fa-book-quran fa-xl"></i>
+                                <small class="d-block">Baca</small>
                             </a>
-                            <a class="nav-link" href="{{ route('about-app') }}">
-                                <i class="fa-solid fa-info-circle"></i>
+                            <a class="nav-link text-center" href="{{ route('about-app') }}">
+                                <i class="fa-solid fa-info-circle fa-xl"></i>
+                                <small class="d-block">Tentang</small>
                             </a>
                         </div>
                     </div>
